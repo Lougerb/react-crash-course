@@ -1,9 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpensesData from "./ExpensesData";
-
+import "../css/Expenses.css";
 function RenderExpenses() {
   return (
-    <div>
+    <div className="expenses">
       {ExpensesData.map((insurance) => {
         return (
           <div key={insurance.id}>
