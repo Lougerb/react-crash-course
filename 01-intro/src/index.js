@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import RenderExpenses from "./components/RenderExpenses";
+import RenderExpenses from "./components/Expenses/RenderExpenses";
 // import ExpensesData from "./ExpensesData";
 
 import "./index.css";

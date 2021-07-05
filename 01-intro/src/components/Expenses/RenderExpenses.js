@@ -1,9 +1,11 @@
-import ExpenseItem from "./ExpenseItem";
-import ExpensesData from "./ExpensesData";
-import "../css/Expenses.css";
+import ExpenseItem from "../Expenses/ExpenseItem";
+import ExpensesData from "../Expenses/ExpensesData";
+import "../../css/Expenses.css";
+import Card from "../UI/Card";
+// import "../css/Card.css";
 function RenderExpenses() {
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {ExpensesData.map((insurance) => {
         return (
           <div key={insurance.id}>
@@ -15,7 +17,7 @@ function RenderExpenses() {
           </div>
         );
       })}
-    </div>
+    </Card>
   );
 }
 export default RenderExpenses;

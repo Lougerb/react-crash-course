@@ -1,5 +1,5 @@
 // import "../App"
-import "../css/ExpenseDate.css";
+import "../../css/ExpenseDate.css";
 function ExpenseDate(props) {
   const month_ = props.date.toLocaleString("en-US", { month: "long" }),
     day_ = props.date.toLocaleString("en-US", { day: "2-digit" }),
