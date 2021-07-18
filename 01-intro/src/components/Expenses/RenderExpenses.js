@@ -1,22 +1,26 @@
 import React, { useState } from "react";
-import ExpenseItem from "../Expenses/ExpenseItem";
+import Expenses from "./Expenses";
 import ExpensesData from "../Expenses/ExpensesData";
 import NewExpense from "../NewExpense/NewExpense";
 import ExpensesFilter from "./ExpenseFilter";
 import "../../css/Expenses.css";
 import Card from "../UI/Card";
-// import "../css/Card.css";
+
 function RenderExpenses() {
-  const generateNewExpense = (expense) => {
+  const [prevExpense, setPrevExpense] = useState(ExpensesData);
+
+  const generateNewExpense = (getExpense) => {
     console.log("in render.js");
-    console.log(expense);
-    // ExpensesData.push({
-    //   id: expense.id,
-    //   title: expense.title,
-    //   amount: expense.amount,
-    //   date: expense.date,
-    // });
-    // console.log(ExpensesData);
+    // console.log(getExpense);
+    // console.log();
+
+    console.log(ExpensesData);
+    // setPrevExpense([getExpense, ...prevExpense]);
+    setPrevExpense((expenses) => {
+      return [getExpense, ...expenses];
+    });
+
+    console.log(ExpensesData);
   };
 
   const [filterYear, setFilterYear] = useState("2020");
@@ -26,6 +30,9 @@ function RenderExpenses() {
     console.log(selectedYear.target.value);
   };
 
+  // Generate new  expense
+  //  const [newNewExpense, setNewNewExpense] = useState(Card)
+
   return (
     <Card className="expenses">
       <NewExpense addExpenseHere={generateNewExpense} />
@@ -33,17 +40,8 @@ function RenderExpenses() {
         defaultYear={filterYear}
         onChangeYear={filterByYearHandler}
       />
-      {ExpensesData.map((insurance) => {
-        return (
-          <div key={insurance.id}>
-            <ExpenseItem
-              title_={insurance.title}
-              amount_={insurance.amount}
-              date_={insurance.date}
-            />
-          </div>
-        );
-      })}
+      {/* To render, get the data from the UseState */}
+      <Expenses data={prevExpense} />
     </Card>
   );
 }

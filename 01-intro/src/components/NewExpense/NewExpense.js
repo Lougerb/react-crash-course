@@ -7,7 +7,7 @@ const NewExpense = (props) => {
   // Will get the data from the form
   const saveDataHandler = (getExpenseData) => {
     const newExpenseData = {
-      id: Math.floor(Math.random() * 100 + 1).toString(),
+      id: Math.floor(Math.random() * 100 + 1),
       ...getExpenseData,
     };
     props.addExpenseHere(newExpenseData);
