@@ -4,14 +4,6 @@ import ExpenseDate from "./ExpenseDate";
 
 import React, { useState } from "react";
 
-// const clickHandler = () => {
-//   console.log("clicked lmao");
-//   const aFunc = () => {
-//     console.log("new");
-//   };
-//   aFunc();
-// };
-
 function ExpenseItem(props) {
   const [title_, setTitle] = useState(props.title_);
 
