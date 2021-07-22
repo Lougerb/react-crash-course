@@ -27,7 +27,8 @@ function RenderExpenses() {
     const userSelectedYear = selectedYear.target.value;
     setFilterYear(userSelectedYear);
     // console.log(userSelectedYear);
-    // console.log(prevExpense);
+    console.log(prevExpense);
+    console.log(filteredNewExpense);
     setFilteredNewExpense(
       prevExpense.filter(
         (expense) => expense.date.getFullYear() == userSelectedYear
