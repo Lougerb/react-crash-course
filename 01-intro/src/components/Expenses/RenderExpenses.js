@@ -11,11 +11,7 @@ function RenderExpenses() {
 
   const generateNewExpense = (getExpense) => {
     console.log("in render.js");
-    // console.log(getExpense);
-    // console.log();
-
     console.log(ExpensesData);
-    // setPrevExpense([getExpense, ...prevExpense]);
     setPrevExpense((expenses) => {
       return [getExpense, ...expenses];
     });
@@ -30,18 +26,12 @@ function RenderExpenses() {
     console.log("This is from RenderExpense.JS");
     const userSelectedYear = selectedYear.target.value;
     setFilterYear(userSelectedYear);
-
-    console.log(userSelectedYear);
-    console.log(prevExpense);
-
+    // console.log(userSelectedYear);
+    // console.log(prevExpense);
     setFilteredNewExpense(
-      prevExpense.filter((expense) => {
-        const expenseYear = expense.date.getFullYear();
-        if (expenseYear == userSelectedYear) {
-          console.log(expense);
-          return expense;
-        }
-      })
+      prevExpense.filter(
+        (expense) => expense.date.getFullYear() == userSelectedYear
+      )
     );
   };
 

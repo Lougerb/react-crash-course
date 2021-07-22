@@ -7,17 +7,17 @@ const ExpensesData = [
   },
   {
     id: 2,
-    title: "Bonk Insurance",
+    title: "PC",
     amount: 351.58,
     date: new Date(2019, 3, 1),
   },
   {
     id: 3,
-    title: "Truck Insurance",
+    title: "Truck ",
     amount: 458.69,
     date: new Date(2021, 3, 2),
   },
-  { id: 4, title: "Gun Insurance", amount: 285.14, date: new Date(2021, 3, 3) },
+  { id: 4, title: "Godzilla", amount: 285.14, date: new Date(2021, 3, 3) },
 ];
 
 export default ExpensesData;
