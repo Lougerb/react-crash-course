@@ -19,21 +19,12 @@ function RenderExpenses() {
     console.log(ExpensesData);
   };
 
-  const [filterYear, setFilterYear] = useState("2020");
-  const [filteredNewExpense, setFilteredNewExpense] = useState(prevExpense);
+  const [filterYear, setFilterYear] = useState("All");
+  // const [filteredNewExpense, setFilteredNewExpense] = useState(prevExpense);
 
   const filterByYearHandler = (selectedYear) => {
-    console.log("This is from RenderExpense.JS");
     const userSelectedYear = selectedYear.target.value;
     setFilterYear(userSelectedYear);
-    // console.log(userSelectedYear);
-    console.log(prevExpense);
-    console.log(filteredNewExpense);
-    setFilteredNewExpense(
-      prevExpense.filter(
-        (expense) => expense.date.getFullYear() == userSelectedYear
-      )
-    );
   };
 
   return (
@@ -44,7 +35,7 @@ function RenderExpenses() {
         onChangeYear={filterByYearHandler}
       />
       {/* To render, get the data from the UseState */}
-      <Expenses data={filteredNewExpense} />
+      <Expenses data={prevExpense} selectedYear_={filterYear} />
     </Card>
   );
 }
